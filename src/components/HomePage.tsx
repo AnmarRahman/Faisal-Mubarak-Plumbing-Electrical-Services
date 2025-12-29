@@ -13,6 +13,9 @@ import {
   BuildingOffice2Icon,
   FireIcon,
   StarIcon,
+  MapPinIcon,
+  CreditCardIcon,
+  CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 
@@ -29,40 +32,48 @@ const translations = {
     },
     hero: {
       title: "خدمات السباكة والكهرباء الاحترافية في المملكة",
-      subtitle: "استجابة سريعة • فنيون محترفون • خدمة موثوقة",
+      subtitle: "استجابة سريعة • فنيون محترفون • خدمة موثوقة • متاحون 24/7",
       cta: "اتصل بنا الآن",
+      emergency: "⚡ خدمات طوارئ متوفرة على مدار الساعة",
     },
     popularServices: {
       title: "خدماتنا الأساسية",
+      subtitle: "نلتزم بمعايير كود البناء السعودي ومواصفات الهيئة السعودية للكهرباء",
       items: [
         {
           title: "خدمات السباكة",
-          desc: "تركيب وإصلاح الأنابيب وكشف التسربات",
+          desc: "تركيب وإصلاح الأنابيب، كشف التسربات بأحدث الأجهزة، صيانة شبكات المياه وفقاً لمعايير المياه الوطنية",
+          price: "ابتداءً من 150 ريال",
           img: "/services/plumbing.jpg",
         },
         {
           title: "خدمات الكهرباء",
-          desc: "أعمال كهربائية وتركيب الإضاءة",
+          desc: "أعمال كهربائية معتمدة، تركيب الإضاءة، توصيلات آمنة متوافقة مع كود الكهرباء السعودي ومعايير SEC",
+          price: "ابتداءً من 200 ريال",
           img: "/services/electrical.jpg",
         },
         {
-          title: "صيانة وطوارئ",
-          desc: "خدمات طوارئ 24/7 وصيانة دورية",
+          title: "صيانة وطوارئ 24/7",
+          desc: "خدمات طوارئ فورية على مدار الساعة، صيانة دورية، استجابة سريعة لأي مشكلة في أي وقت",
+          price: "ابتداءً من 180 ريال",
           img: "/services/maintenance.jpg",
         },
         {
           title: "تركيب سخانات",
-          desc: "تركيب وصيانة سخانات المياه",
+          desc: "تركيب وصيانة سخانات المياه بجميع الأنواع، ضمان شامل، توفير في الطاقة",
+          price: "ابتداءً من 250 ريال",
           img: "/services/water-heaters.jpg",
         },
         {
           title: "شبكات المياه",
-          desc: "تصميم وتنفيذ شبكات المياه",
+          desc: "تصميم وتنفيذ شبكات المياه للمنازل والمباني، اختبار ضغط، ضمان عدم التسرب",
+          price: "ابتداءً من 500 ريال",
           img: "/services/water-network.jpg",
         },
         {
           title: "تركيب مولدات",
-          desc: "تركيب وصيانة مولدات الكهرباء",
+          desc: "تركيب وصيانة مولدات الكهرباء، توصيلات آمنة، صيانة دورية",
+          price: "ابتداءً من 800 ريال",
           img: "/services/generators.jpg",
         },
       ],
@@ -70,12 +81,40 @@ const translations = {
     whyUs: {
       title: "لماذا تختارنا؟",
       items: [
-        { icon: ShieldCheckIcon, text: "فنيون ذوو خبرة" },
-        { icon: ClockIcon, text: "استجابة سريعة" },
-        { icon: Cog6ToothIcon, text: "مواد عالية الجودة" },
-        { icon: StarIcon, text: "أسعار تنافسية" },
-        { icon: BuildingOffice2Icon, text: "نخدم المملكة العربية السعودية" },
-        { icon: FireIcon, text: "خدمات طوارئ 24/7" },
+        { icon: ShieldCheckIcon, text: "فنيون معتمدون وذوو خبرة" },
+        { icon: ClockIcon, text: "استجابة فورية خلال 30 دقيقة" },
+        { icon: Cog6ToothIcon, text: "مواد عالية الجودة ومعتمدة" },
+        { icon: StarIcon, text: "أسعار تنافسية وشفافة" },
+        { icon: BuildingOffice2Icon, text: "خدماتنا في جميع أنحاء المملكة" },
+        { icon: FireIcon, text: "خدمات طوارئ 24/7 بدون توقف" },
+      ],
+    },
+    serviceAreas: {
+      title: "مناطق خدماتنا",
+      cities: [
+        "الرياض",
+        "جدة",
+        "الدمام",
+        "مكة المكرمة",
+        "المدينة المنورة",
+        "الخبر",
+        "الطائف",
+        "تبوك",
+        "القصيم",
+        "أبها",
+        "حائل",
+        "نجران",
+      ],
+    },
+    paymentMethods: {
+      title: "طرق الدفع المتاحة",
+      methods: [
+        "نقداً",
+        "تحويل بنكي",
+        "مدى",
+        "فيزا - ماستركارد",
+        "Apple Pay",
+        "STC Pay",
       ],
     },
     contact: {
@@ -91,7 +130,7 @@ const translations = {
     },
     footer: {
       company: "مؤسسة فيصل مبارك للسباكة والكهرباء",
-      desc: "خدمات احترافية في السباكة والكهرباء",
+      desc: "خدمات احترافية في السباكة والكهرباء متوافقة مع المعايير السعودية",
       rights: "جميع الحقوق محفوظة",
     },
   },
@@ -105,40 +144,48 @@ const translations = {
     },
     hero: {
       title: "Professional Plumbing & Electrical Services in Saudi Arabia",
-      subtitle: "Fast Response • Professional Technicians • Reliable Service",
+      subtitle: "Fast Response • Professional Technicians • Reliable Service • Available 24/7",
       cta: "Contact Us Now",
+      emergency: "⚡ Emergency Services Available Around the Clock",
     },
     popularServices: {
       title: "Our Core Services",
+      subtitle: "Compliant with Saudi Building Code and Saudi Electricity Company (SEC) Standards",
       items: [
         {
           title: "Plumbing Services",
-          desc: "Pipe installation, repair & leak detection",
+          desc: "Pipe installation and repair, advanced leak detection, water network maintenance following National Water Company standards",
+          price: "Starting from 150 SAR",
           img: "/services/plumbing.jpg",
         },
         {
           title: "Electrical Services",
-          desc: "Electrical work & lighting installation",
+          desc: "Certified electrical work, lighting installation, safe connections compliant with Saudi Electrical Code and SEC standards",
+          price: "Starting from 200 SAR",
           img: "/services/electrical.jpg",
         },
         {
-          title: "Maintenance & Emergency",
-          desc: "24/7 emergency service & regular maintenance",
+          title: "Maintenance & Emergency 24/7",
+          desc: "Immediate emergency services around the clock, regular maintenance, rapid response to any issue at any time",
+          price: "Starting from 180 SAR",
           img: "/services/maintenance.jpg",
         },
         {
           title: "Water Heaters",
-          desc: "Installation & repair of water heaters",
+          desc: "Installation and maintenance of all types of water heaters, comprehensive warranty, energy-efficient solutions",
+          price: "Starting from 250 SAR",
           img: "/services/water-heaters.jpg",
         },
         {
           title: "Water Networks",
-          desc: "Design & installation of water networks",
+          desc: "Design and installation of water networks for homes and buildings, pressure testing, leak-proof guarantee",
+          price: "Starting from 500 SAR",
           img: "/services/water-network.jpg",
         },
         {
           title: "Generators",
-          desc: "Generator installation & maintenance",
+          desc: "Generator installation and maintenance, safe connections, regular servicing",
+          price: "Starting from 800 SAR",
           img: "/services/generators.jpg",
         },
       ],
@@ -146,12 +193,40 @@ const translations = {
     whyUs: {
       title: "Why Choose Us?",
       items: [
-        { icon: ShieldCheckIcon, text: "Experienced Technicians" },
-        { icon: ClockIcon, text: "Fast Response Time" },
-        { icon: Cog6ToothIcon, text: "High-Quality Materials" },
-        { icon: StarIcon, text: "Competitive Pricing" },
-        { icon: BuildingOffice2Icon, text: "Serving Saudi Arabia" },
-        { icon: FireIcon, text: "24/7 Emergency Services" },
+        { icon: ShieldCheckIcon, text: "Certified & Experienced Technicians" },
+        { icon: ClockIcon, text: "Immediate Response Within 30 Minutes" },
+        { icon: Cog6ToothIcon, text: "High-Quality Certified Materials" },
+        { icon: StarIcon, text: "Competitive & Transparent Pricing" },
+        { icon: BuildingOffice2Icon, text: "Serving All Regions of Saudi Arabia" },
+        { icon: FireIcon, text: "24/7 Non-Stop Emergency Services" },
+      ],
+    },
+    serviceAreas: {
+      title: "Our Service Areas",
+      cities: [
+        "Riyadh",
+        "Jeddah",
+        "Dammam",
+        "Makkah",
+        "Madinah",
+        "Khobar",
+        "Taif",
+        "Tabuk",
+        "Qassim",
+        "Abha",
+        "Hail",
+        "Najran",
+      ],
+    },
+    paymentMethods: {
+      title: "Accepted Payment Methods",
+      methods: [
+        "Cash",
+        "Bank Transfer",
+        "Mada",
+        "Visa - Mastercard",
+        "Apple Pay",
+        "STC Pay",
       ],
     },
     contact: {
@@ -167,7 +242,7 @@ const translations = {
     },
     footer: {
       company: "Faisal Mubarak Plumbing & Electrical Services",
-      desc: "Professional plumbing and electrical services",
+      desc: "Professional plumbing and electrical services compliant with Saudi standards",
       rights: "All rights reserved",
     },
   },
@@ -272,9 +347,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="home"
-        className="pt-24 pb-16 px-4 bg-gradient-to-br from-primary-50 to-secondary-50"
+        className="pt-24 pb-16 px-4 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto text-center">
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <img
+            src="/hero-bg.jpg"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="bg-red-600 text-white px-6 py-3 rounded-full inline-block mb-4 font-bold animate-pulse">
+            {t.hero.emergency}
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 relative inline-block">
             {t.hero.title}
             <span className="block w-24 h-1 bg-primary-600 mx-auto mt-2 rounded"></span>
@@ -294,27 +380,66 @@ export default function HomePage() {
       {/* Popular Services */}
       <section id="services" className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 relative inline-block">
             {t.popularServices.title}
             <span className="block w-20 h-1 bg-secondary-600 mx-auto mt-2 rounded"></span>
           </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            {t.popularServices.subtitle}
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {t.popularServices.items.map((service, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:-translate-y-2"
               >
-                <img
-                  src={service.img}
-                  alt={service.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = "none";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-700">{service.desc}</p>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {service.desc}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span className="text-primary-600 font-bold text-lg">
+                      {service.price}
+                    </span>
+                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-16 px-4 bg-gradient-to-br from-primary-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative inline-block">
+            {t.serviceAreas.title}
+            <span className="block w-20 h-1 bg-primary-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {t.serviceAreas.cities.map((city, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition text-center flex flex-col items-center"
+              >
+                <MapPinIcon className="h-8 w-8 text-primary-600 mb-2" />
+                <span className="font-semibold text-gray-800">{city}</span>
               </div>
             ))}
           </div>
@@ -332,12 +457,33 @@ export default function HomePage() {
             {t.whyUs.items.map((item, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl p-6 shadow-md flex flex-col items-center text-center hover:shadow-xl transition"
+                className="bg-white rounded-xl p-6 shadow-md flex flex-col items-center text-center hover:shadow-xl transition transform hover:-translate-y-1"
               >
                 <item.icon className="h-12 w-12 text-primary-600 mb-4" />
                 <p className="text-lg font-semibold text-gray-800">
                   {item.text}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Methods */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 relative inline-block">
+            {t.paymentMethods.title}
+            <span className="block w-20 h-1 bg-secondary-600 mx-auto mt-2 rounded"></span>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {t.paymentMethods.methods.map((method, i) => (
+              <div
+                key={i}
+                className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col items-center text-center"
+              >
+                <CreditCardIcon className="h-10 w-10 text-primary-600 mb-3" />
+                <span className="font-semibold text-gray-800">{method}</span>
               </div>
             ))}
           </div>
@@ -401,8 +547,6 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-            {/* Google Maps */}
-            {/* Google Maps */}
             {/* Google Maps */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
